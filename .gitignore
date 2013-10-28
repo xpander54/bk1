@@ -1,2 +1,4 @@
 
 cgv/cgv/settings.py
+
+*.pyc
