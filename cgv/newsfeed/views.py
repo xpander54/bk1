@@ -8,14 +8,14 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404
 
 from newsfeed.models import Subscriptor, Feed
-from newsfeed.forms import IndexFeedForm
+from newsfeed.forms import EmailNewsfeedForm
 
 # Movel a views.py en cursos >
 def index(request):
 
 	if request.method == 'POST':
 
-		forma_subscripcion = IndexFeedForm(request.POST)
+		forma_subscripcion = EmailNewsfeedForm(request.POST)
 
 		if forma_subscripcion.is_valid():
 
@@ -79,6 +79,10 @@ def newsfeed_deactivate(request, code):
 		return HttpResponse('Subscripción desactivada.')
 
 	return HttpResponse('la subscripción ya había sido cancelada.')
+
+def newsfeed_send_code(request):
+
+	return HttpResponse('Sección en Construcción')
 
 
 # PASAR ESTO AL MODELO >
