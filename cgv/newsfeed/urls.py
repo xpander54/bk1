@@ -5,4 +5,5 @@ urlpatterns = patterns('',
 	url(r'^$', views.index, name = 'index'),
 	url(r'^(?P<code>[a-z A-Z 0-9]{10})/newsfeed-confirm/$', views.newsfeed_confirm, name = 'newsfeedconfirm'),
 	url(r'^(?P<code>[a-z A-Z 0-9]{10})/newsfeed-deactivate/$', views.newsfeed_deactivate, name = 'newsfeeddeactivate'),
+	url(r'^send-code/$', views.newsfeed_send_code, name="newsfeed_send_code"),
 )
