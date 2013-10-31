@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404
 
 from newsfeed.models import Subscriptor, Feed
-from newsfeed.forms import EmailNewsfeedForm
+from newsfeed.forms import EmailNewsfeedForm, EmailForm
 
 # Movel a views.py en cursos >
 def index(request):
@@ -43,7 +43,7 @@ def index(request):
 
 
 	else:
-		forma_subscripcion = IndexFeedForm()
+		forma_subscripcion = EmailNewsfeedForm()
 		
 
 	context = {
@@ -69,7 +69,7 @@ def newsfeed_confirm(request, code):
 
 
 def newsfeed_deactivate(request, code):
-	susbscriptor = get_object_or_404(Subscriptor, codigo = code)
+	subscriptor = get_object_or_404(Subscriptor, codigo = code)
 
 	if subscriptor.activo == True:
 
@@ -82,7 +82,42 @@ def newsfeed_deactivate(request, code):
 
 def newsfeed_send_code(request):
 
-	return HttpResponse('Sección en Construcción')
+	if request.method == 'POST':
+
+		forma = EmailForm(request.POST)
+
+		if forma.is_valid():
+
+			correo = forma.cleaned_data['email']
+
+			try:
+
+				subscriptor   = Subscriptor.objects.get(email = correo)
+				email_subject = "Envío de código para desactivar newsfeed CGV"
+				email_message = """
+					http://localhost:8000/%s/newsfeed-deactivate/
+				""" % subscriptor.codigo
+
+				if __send_email(email_subject, email_message, correo):
+
+					return HttpResponse('Sé ha enviado el código de desactivación a su cuenta de correo electrónico')
+
+
+			except Subscriptor.DoesNotExist:
+
+				return HttpResponse('El correo electrónico no coincide con ningun subscriptor.')
+
+			# return HttpResponse(correo)
+
+	else:
+		forma = EmailForm()
+
+
+	context = {
+		'forma_codigo' : forma,
+	}
+
+	return render(request, 'newsfeed/send_code.html', context)
 
 
 # PASAR ESTO AL MODELO >
