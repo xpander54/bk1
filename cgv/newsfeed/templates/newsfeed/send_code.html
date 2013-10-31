@@ -3,6 +3,6 @@
 {% block contenido %}
 	<form action="{% url 'newsfeed_send_code' %}" method="post">
 		{% csrf_token %}
-		{{ forma_subscripcion.as_p }}
+		{{ forma_codigo.as_p }}
 	</form>
 {% endblock %}
