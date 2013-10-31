@@ -1,8 +1,13 @@
-from django.forms import ModelForm
+from django import forms
 from newsfeed.models import Subscriptor
 
-class EmailNewsfeedForm(ModelForm):
+class EmailNewsfeedForm(forms.ModelForm):
 	class Meta:
 		model  = Subscriptor
 		fields = ('email',)
+
+
+class EmailForm(forms.Form):
+	email = forms.EmailField(max_length = 75)
+
     
