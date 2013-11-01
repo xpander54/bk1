@@ -143,6 +143,20 @@ header .main
 	position: relative;
 }
 
+.index-curso-container
+{
+	margin:1%;
+	background: #fffefe;
+	width: 96.4%;
+	padding: .8%;
+
+}
+
+.content-index
+{
+	height: inherit;
+}
+
 .content-subtitle
 {
 	font-size: 2.3em;
@@ -165,7 +179,7 @@ header .main
 {
 	float: right;
 	width: 28%;
-	margin: .5em 0 0 0;
+	margin: -1.3em 0em  0.5em 0em;
 
 }
 
@@ -173,6 +187,7 @@ header .main
 {
 	box-shadow: -1px 2px 2px rgba(50, 50, 50, 0.35);
 	border: solid 5px #fffefe;
+	width: 60%;
 }
 
 .content-strong
@@ -190,6 +205,8 @@ header .main
 	width: 22.5%;
 	text-align: center;
 	float: left;
+	
+	padding-right: .6%;
 
 }
 
@@ -204,8 +221,8 @@ header .main
 .content-btn-2
 {
 	box-shadow: -1px 2px 2px rgba(50, 50, 50, 0.35);
-	padding: 1em .5em;
-	margin: 1em 0 0 0;
+	padding: .9em .5em 0.9em .5em;
+	margin: .5em 0 0 0;
 	background: #fffefe;
 }
 
@@ -259,9 +276,10 @@ header .main
 {
 	background: #8a2e17;
 	width: 1%;
-	height: 510px;
+	height: 100%;
 	float: left; 
-	margin: 0 0 0 .5em;
+	margin: 1em 0 0 .5em;
+	position: relative;
 }
 
 .content-3-2
@@ -269,15 +287,17 @@ header .main
 	float: left;
 	position: relative;
 	width: 50.9%;
-	margin: 1em 0 0 .5em;
+	margin: 0em 0 0 .5em;
 	padding: 1em;
 	background: #fffefe;
+	height: inherit;
 }
 
 .c3-1-2
 {
 	margin: 0 0 0 .5em;
-	width: 19.4%;
+	width: 18%;
+	padding-left: .6em;
 }
 
 .content-3-1 > .content-btn-1
@@ -288,7 +308,7 @@ header .main
 
 .c3-2-nfo
 {
-	margin: 1em 0 0 0;
+	margin: .8em 0 0 0;
 	text-align: justify;
 	position: relative;
 	
@@ -308,7 +328,7 @@ header .main
 .content-3-2-img
 {
 	text-align: center;
-	margin: 5em 0 0 0;
+	margin: 3em 0 0 0;
 }
 
 .content-mail-txt-area
@@ -398,6 +418,7 @@ header .main
 	width: 30%;
 	float: right;
 	padding-right: 1em;
+	background: #fffefe;
 }
 
 .drop-shadow
