@@ -1,8 +1,343 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-	<form action="{% url 'index' %}" method="post">
-		{% csrf_token %}
-		{{ forma_subscripcion.as_p }}
-	</form>
+
+
+			<section class="content-main clear-fix" style="background: #fffefe;">
+				
+				<div class="content-subtitle">
+					Bienvenidos
+				</div>
+				<br>
+				<div class="content-nfo">
+					<p>
+					Quiero darte la bienvenida a nuestra comunidad, formada por gente que esta decidida a tener mejores experiencias cada dia de sus vidas; Es para todos, para quienes estan en kproceso de crecimiento, para quienes no saben como empezar, para quienes saben a donde van y para los que estan buscando rumbo. 
+
+					</p>
+					<br>
+					<p>
+					Todas las personas son bienvenidas, y cada uno es parte importante de nuestra comunidad. Aqí encontraras herramientas y tecnicas sencillas y útiles, trataremos temas de interes común y te proporcionaremos un lugar seguro donde puedas compartir tus anhelos y tus triunfos.
+					</p>
+
+					<div class="content-strong">
+						Nos da gusto recibirte!!!
+					</div>
+				</div>
+				<div class="content-img">
+
+					<img src="{{ STATIC_URL }}img/foto.jpg">
+
+				</div>
+
+			</section>
+
+			<section class="content-main clear-fix">
+
+				<div class="content-3-1">
+
+					<div class="content-btn-1">
+
+						<div class="content-subtitle-2">
+							Audio Gratis
+						</div>
+
+
+
+						<img src="{{ STATIC_URL }}img/icon-mp3.png">
+
+						<div class="content-btn-nfo">
+							Escucha Mis Audios Quincenales
+						</div>
+
+					</div>
+
+					<div class="content-btn-1">
+
+						<div class="content-subtitle-2">
+							Video Gratis
+						</div>
+
+						<img src="{{ STATIC_URL }}img/icon-video.png">
+
+						<div class="content-btn-nfo">
+							Videos Gratis Quincenales
+						</div>
+
+					</div>
+
+					<div class="content-btn-1">
+
+						<div class="content-subtitle-2">
+							E-Books Gratis
+						</div>
+
+						<img src="{{ STATIC_URL }}img/icon-pdf.png">
+
+						<div class="content-btn-nfo">
+							Descarga E-books Gratis
+						</div>
+
+					</div>
+
+				</div>
+				<div class="content-bar">
+
+				</div>
+				<div class="content-3-2 drop-shadow">
+
+					<div class="content-subtitle">
+						Reflexiones
+					</div>
+
+					<div class="content-nfo c3-2-nfo clear-fix" style="width:100%;">
+						Coloca tu 
+						<span class="content-strong">
+							Mail
+						</span>
+						Abajo y recibe 
+						<span class="content-strong">
+							Inmediatamente
+						</span>
+						mis tips, consejos y ejercicios para una vida 
+						<span class="content-strong">
+							Más abundante y prospera.
+						</span>
+
+						<br><br>
+
+						<div class="content-mail-txt-area">
+
+							<!-- <input type="text" name="mail-newsletter"> -->
+
+
+							<form action="{% url 'index' %}" method="post">
+								{% csrf_token %}
+								<p>
+									{{ forma_subscripcion.email }}
+								</p>
+							</form>
+						
+							<div class="content-subtitle-3 privacidad">
+								<ul class="mail-btn">
+									<li>
+										
+										<a href="#">
+										Respetamos tu privacidad
+										</a>
+
+									</li>
+
+								</ul>
+							</div>
+
+						</div>
+						<div class="content-3-2-img">
+
+							<img src="{{ STATIC_URL }}img/foto-portada.jpg">
+
+						</div>
+
+						<div class="c3-2-nfo" style="font-size: .7em;">
+
+
+
+						Suscríbete para recibir acceso gratis e inmediato a videos, ebooks y audios llenos de información para comenzar a vivir tu vida al máximo ahora mismo.
+						Obten acceso a información creada por Gaby Valdes, coach certificada que te traerá con sus ejercicios una vida más próspera y de salud emocional.
+						</div>
+
+
+
+					</div>
+
+
+				</div>
+				<div class="content-bar">
+
+				</div>
+				<div class="content-3-1 c3-1-2" style="">
+
+					<div class="content-btn-2" style="text-align: left;">
+
+						<div class="content-subtitle-2">
+							Login:		
+						</div>
+						<div class="content-subtitle-3">
+							E-mail:
+							<input type="text" name="mail-username">
+						</div>
+
+						<div class="content-subtitle-3">
+							Password:
+							<input type="password" name="password">
+							<input type="submit" class="submit-btn" value="entrar" name="login-btn" style=" text-align: left; border:0;
+							padding: 0 0 0 1.6em; font-size: .8em; background: url({{ STATIC_URL }}img/btn-2.png) no-repeat 0.5em .5em; height: 26px;">
+						</div>
+
+					</div>
+
+					<div class="content-btn-2" style="text-align: left;">
+
+						<div class="content-subtitle-2" style="height: 5%;">
+							
+
+
+							<!-- twitter -->
+								<a class="twitter-timeline" href="https://twitter.com/GabyValdes8" data-widget-id="396087263395733504">Tweets by @GabyValdes8</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+							<!-- /twitter -->
+							
+						</div>
+
+					</div>
+
+					<div class="content-btn-2" style="text-align: left;">
+
+						<div class="content-subtitle-2">
+							Redes Sociales
+							
+						</div>
+						<a href="http://www.facebook.com/gaby.valdesh" >
+
+							<img src="{{ STATIC_URL }}img/facebook_32.png">
+
+						</a>
+
+						<a href="https://twitter.com/gabyvaldes8">
+
+
+							<img src="{{ STATIC_URL }}img/twitter_32.png">
+
+						</a>
+					</div>
+
+
+				</div>
+
+
+			</section>
+
+			<section class="content-main clear-fix">
+				<div class="content-subtitle underline">
+						Curso: 
+				</div>
+
+				<div class="bar-horizontal">
+
+				</div>
+
+				<div class="content-2-1">
+
+					<div class="content-curso-title">
+
+
+						<span class="content-strong">
+							Abundancia:
+						</span>
+						<span class="content-subtitle underline">
+								7
+						</span>
+
+						<span class="">
+							Pasos Comprobados para vivirla día a día
+
+						</span>
+					</div>
+					<br>
+					<div class="bar-horizontal">
+					</div>
+					<div class="content-nfo">
+						Programa de coaching para mujeres
+					</div>
+					<br>
+
+					<div class="bar-horizontal">
+					</div>
+
+					<span class="content-strong">
+							Aprende a vivir de la abundancia y decirle adiós a la carencia
+					</span>
+
+					<div class="content-nfo list-2" style="width:90%;">
+						<span class="content-strong">
+							Programa de coaching virtual
+						</span>
+
+						en el que podrás transformarte a ti misma a lo largo de 7 sesiones, idealmente semanales, que han sido diseñadas para que obtengas resultados rápidos, y a las que trndrás acceso inmediato en el momento de tu compra. Es personalizado ya que te proporcionamos ejercicios en audio y video que vas a aplicar de manera independiente al curso, y que te van a permitir ser cada vez más clara y realizar avances de manera consistente en tu vida.
+						<br>
+						<br>
+						<span class="content-subtitle-2">
+
+							Precio 
+							<span class="content-strong">
+								oferta 
+							</span>
+							de lanzamiento!!!
+						</span>
+						<br>
+						<br>
+						<img src="{{ STATIC_URL }}img/banner-indx-producto.png">
+						
+					</div>
+
+				</div>
+
+
+			
+
+			<section class="content-main content-2-2">
+
+				<div class="content-subtitle-2">
+							Información del curso:	
+				</div>
+
+				<div class="content-strong">
+					¿Qué es abundancia?
+				</div>
+				<div class="content-nfo" style="width:90%;">
+					En lo personal he trabajado mucho este tema y lo conozco bien. <br>
+					¿A qué me refiero con abundancia? Un diccionario dice que hay mucho de algo. Ese Algo puede ser un sin numero de cosas como: 
+					<div class="content-strong">
+					Amigos, Familiares, pasiones, cariño y dinero.
+					</div>
+
+	<!--				
+					Pero también la vida puede estar llena de cosas malas, y aunque las malas suenen como un vacío o una carencia, este vacío puede llenar nuestra vida y traer todos esos sentimientos de angustia.
+					
+					
+
+					Lo <span class="content-strong">económico</span> también es un tipo de abundancia muy deseada y muy pensada, pero esta no es la única abundancia que exite, esta abarca mucho mas, esta es una percepción que tenemos de lo que tenemos o no. Se escucha mucho de las crisis últimamente y pensamos en este tipo de problemas como falta de dinero, aunque sea lo suficiente.
+					<br>
+					La <span class="content-strong">salud</span> es otro tipo de abundancia importante, ya que a veces la damos por sentado... hasta que nos falta.
+
+-->
+
+
+
+					<br>
+					Por eso te invito a que reflexiones y veas que tipo de abundancia es la que deseas atraer a tu vida. Te invito a que conozcas más los beneficios que tendrás al adquirir el curso de: 
+					<div class="content-strong">
+						Abundancia: 7 pasos comprobados para vivirla día a día. 
+					</div>
+					Programa de coaching para mujeres
+
+					<br>
+
+					Si quieres saber más sobre el curso te invito a que des 
+					<span class="content-stron">
+						click en el siguiente botón
+					</span>
+					y te de unos ejemplos de lo que aprenderás, dile adiós a la carencia y atrae el tipo de abundancia que quieres a tu vida!
+
+				</div>
+
+			
+			<br>
+			</section>
+
+		</section>
+
+
+	
 {% endblock %}

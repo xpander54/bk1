@@ -3,9 +3,97 @@
 <head>
 	<meta charset="utf-8">
 	<title>Cursos Gaby Valdes</title>
+
+	<link href="{{ STATIC_URL }}css/estilo.css" rel="stylesheet" type="text/css" />
+
+
+
 </head>
 <body>
-	{% block contenido %}
-	{% endblock %}
+
+	<div class="wrapper clear-fix">
+		<header class="main">
+
+			<div class="logo">
+
+
+
+				<a href="/">
+					<img src="{{ STATIC_URL }}img/logo-head.png" >
+					</img>
+				</a>
+
+			</div>
+			<div class="main head-menu">
+
+
+				<nav class="main">
+					<ul>
+						<li>
+							<a href="/">
+								Inicio
+							</a>
+						</li>
+						<li>
+							<a href="/">
+								Reflexiones
+							</a>
+						</li>
+						<li>
+							<a href="/">
+								Productos
+							</a>
+						</li>
+						<li>
+							<a href="/">
+								Contacto
+							</a>
+						</li>
+					</ul>
+				</nav>
+
+
+
+			</div>
+			
+
+
+		</header>
+		
+		<section class="main">
+
+			
+
+				{% block contenido %} 
+
+		        {% endblock %}
+
+
+			
+
+		</section>
+
+		<section class="content-main clear-fix">
+				<div class="content-subtitle">
+						Testimonios: 
+				</div>
+
+				<div class="content-nfo" style="width: 90%; padding: 1em 0 2.5em 0;">
+					Decidí revisar la historia de mi vida porque no me gustaban mis actitudes, ya que vivia con miedos, lloraba mucho y no podía entender que era lo que causaba mi manera de actuar. Cuando trabaje con Gaby sentí como si una aspiradora hubiera pasado por mi cuerpo limpiando muchas cosas que no sabía que tenía, ahora me siento muy tranquila, fué más fácil y rápido de lo que pensaba, definitivamente valió la pena
+				</div>
+
+				<div class="testimonio-autor">
+					M.M. 67 Años
+				</div>
+		<section>
+
+
+		<footer class="main">
+
+		</footer>
+	</div>
+
+
+	
 </body>
 </html>
