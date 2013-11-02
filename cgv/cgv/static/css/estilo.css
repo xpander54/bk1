@@ -43,7 +43,7 @@ body
 .main
 {
 	width: 97%;
-	max-width: 1280px;
+	max-width: 920px;
 	margin: 0 auto;
 
 }
@@ -83,8 +83,7 @@ nav.main ul > li
 {
 	display: block;
 	float: left;
-	padding-left: 2em; 
-	width: 18%;
+	width: 24%;
 	text-align: center;
 	margin: 0.2em 0 0 0;
 }
@@ -97,6 +96,7 @@ nav.main ul > li a, .content-subtitle
 	color: #dfa246;
 	font-weight: bolder;
 	text-shadow: -1px 2px 2px rgba(50, 50, 50, 0.35);
+
 }
 
 nav.main ul > li a:hover
@@ -132,11 +132,11 @@ header .main
 
 .content-main
 {
-	box-shadow: -1px 2px 2px rgba(50, 50, 50, 0.35);
+	box-shadow: -1px 2px 2px rgba(50, 50, 50, 0.95);
 	text-align: justify;
 	font-size: .8em;
 	line-height: .98em;
-	background: #dce8ee;
+	background: rgba(220,232,238,.1);
 	padding: .5em 0 0.5em .5em;
 	margin: 1em auto 0 auto;
 	width: 95%;
@@ -180,6 +180,7 @@ header .main
 	float: right;
 	width: 28%;
 	margin: -1.3em 0em  0.5em 0em;
+	text-align: center;
 
 }
 
@@ -187,7 +188,7 @@ header .main
 {
 	box-shadow: -1px 2px 2px rgba(50, 50, 50, 0.35);
 	border: solid 5px #fffefe;
-	width: 60%;
+	width: 80%;
 }
 
 .content-strong
@@ -202,7 +203,7 @@ header .main
 
 .content-3-1
 {
-	width: 22.5%;
+	width: 20%;
 	text-align: center;
 	float: left;
 	
@@ -286,17 +287,17 @@ header .main
 {
 	float: left;
 	position: relative;
-	width: 50.9%;
+	width: 46%;
 	margin: 0em 0 0 .5em;
 	padding: 1em;
-	background: #fffefe;
+	background: rgba(255,254,254,1);
 	height: inherit;
 }
 
 .c3-1-2
 {
 	margin: 0 0 0 .5em;
-	width: 18%;
+	width: 22%;
 	padding-left: .6em;
 }
 
@@ -316,7 +317,7 @@ header .main
 
 .c3-2-nfo img
 {
-	width: 70%;
+	width: 95%;
 	margin: 0 auto;
 }
 
@@ -376,6 +377,31 @@ header .main
 	background: url(../img/btn-1.png) no-repeat center ;
 	font-family: 'copperplate_bold', 'serif';
 	color:#f3b250;
+
+}
+
+.flecha-abajo-cont
+{
+	width: 25%;
+	text-align: center;
+	position: relative;
+	margin-top: -2em auto;
+}
+
+.flecha-abajo
+{
+	width: 32px;
+	height: 39px;
+	text-align: center;
+	background: url(../img/flecha-abajo.png) auto 0;
+}
+
+.flecha-abajo-txt
+{
+	font-size: 1.6em;
+	position: absolute;
+	margin: .3em 0 0 21%;
+	text-shadow: 0px 0px 28px rgba(255, 255, 255, 1);
 
 }
 
