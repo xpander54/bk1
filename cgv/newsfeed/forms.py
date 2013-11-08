@@ -8,6 +8,6 @@ class EmailNewsfeedForm(forms.ModelForm):
 
 
 class EmailForm(forms.Form):
-	email = forms.EmailField(max_length = 75)
+	email = forms.EmailField(max_length = 125)
 
     
