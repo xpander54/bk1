@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+
+{% block contenido %}
+
+	<div class="reflexiones-cont-2cols clear-fix">
+		
+
+		<section class="content-main clear-fix reflexiones-col-left" style="background: #fffefe;">
+
+				
+
+			<h2 class="content-subtitle">
+				Reflexiones
+			</h2>
+
+				
+					
+
+			<p>
+				<span class="content-strong">
+						Bienvenido
+				</span>
+
+				
+				
+				<span class="">
+				a mi espacio de reflexiones. donde encontrarás acceso 
+				</span>
+				
+					<span class="content-strong">gratuito e inmediato</span>
+				
+				<span>
+				 a posts con consejos, ideas, ejercicios y entrenamientos para una vida mas sana.
+				</span>
+			
+				
+			</p>
+
+			<p>
+				<span class="content-strong">Ingresa</span> tu mail y recibe acceso <span class="content-strong">gratis e inmediato</span> a estos videos, e-books y audios llenos de información para comenzar a vivir tu vida al máximo ahora mismo.
+			</p>
+
+				<br>
+				<br>
+			<div class="content-mail-txt-area">
+
+				<!-- <input type="text" name="mail-newsletter"> -->
+
+
+				<form action="{% url 'index' %}" method="post">
+					{% csrf_token %}
+					<p>
+						{{ forma_suscripcion.email }}
+					</p>
+				</form>
+			
+				<div class="content-subtitle-3 privacidad">
+					<ul class="mail-btn">
+						<li>
+							
+							<a href="#">
+							Respetamos tu privacidad
+							</a>
+
+						</li>
+
+					</ul>
+				</div>
+			</div>
+
+		</section>
+
+		<section class="content-main clear-fix reflexiones-col-right" style="background: #fffefe;">
+
+			<img src="{{ STATIC_URL }}img/reflexiones-curso.png" alt="reflexiones gaby valdes">
+
+	
+		</section>
+
+	</div>
+
+	<section class="content-main clear-fix" style="background: #fffefe;">
+
+		<div class="reflexiones-btns-container">
+
+			<div class="reflexiones-btn1">
+
+						<div class="reflexiones-btn-cont drop-shadow">
+							
+
+							<div class="content-subtitle-2">
+								Audio Gratis
+
+							</div>
+
+							<img src="{{ STATIC_URL }}img/icon-mp3.png">
+
+							<div class="content-btn-nfo">
+								Escucha Mis Audios Quincenales
+							</div>		
+	
+						</div>
+
+			</div>
+			<div class="reflexiones-btn1">
+				
+				<img src="{{ STATIC_URL }}img/" alt="">
+
+			</div>
+			<div class="reflexiones-btn1">
+				
+				<img src="{{ STATIC_URL }}img/" alt="">
+
+			</div>
+				
+			
+
+		</div>
+
+	</section>
+
+{% endblock %}
