@@ -4,11 +4,18 @@
 	<meta charset="utf-8">
 	<title>Cursos Gaby Valdes</title>
 
+	<link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" /> 	
+
 	<link href="{{ STATIC_URL }}css/estilo.css" rel="stylesheet" type="text/css" />
 
 
+			
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
 
 </head>
+
 <body>
 
 	<div class="wrapper clear-fix">
@@ -24,6 +31,10 @@
 				</a>
 
 			</div>
+
+
+
+
 			<div class="main head-menu">
 
 
@@ -56,27 +67,19 @@
 
 			</div>
 			
-
-
 		</header>
 		
 		<section class="main">
 
-			
-
 				{% block contenido %} 
 
-		        {% endblock %}
-
-
-			
+		        {% endblock %}			
 
 		</section>
 
-		
-
-
 		<footer class="main">
+
+			
 
 		</footer>
 	</div>

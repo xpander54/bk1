@@ -3,11 +3,16 @@
 {% block contenido %}
 
 
+			
+			
+
+
 			<section class="content-main clear-fix" style="background: #fffefe;">
 				
 				<div class="content-subtitle">
 					Bienvenidos
 				</div>
+
 				<br>
 				<div class="content-nfo">
 					<p>
@@ -22,6 +27,10 @@
 					</div>
 				</div>
 				<div class="content-img">
+
+					 
+
+
 
 					<img src="{{ STATIC_URL }}img/foto.jpg">
 
@@ -138,10 +147,48 @@
 							<br>
 							<br>
 							<br>
+							<br>
+							<br>
+							<br>
 							
 							<div class="content-3-2-img">
 
-								<img src="{{ STATIC_URL }}img/curso-1.png">
+								<!--Slide Bootstrap-->
+	           
+							   <div id="myCarousel" class="carousel slide">
+
+							              <ol class="carousel-indicators">
+
+							                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							                <li data-target="#myCarousel" data-slide-to="1"></li>
+
+							              </ol>
+
+							              <!-- Carousel items -->
+							              <div class="carousel-inner">
+
+							                <div class="active item">
+							                  <img src="{{ STATIC_URL }}img/proximamente.png">
+							                </div>
+							                <div class="item">
+							                  <img src="{{ STATIC_URL }}img/slide01.png" alt="cursos gaby valdes">
+							                </div>
+							                
+
+							              </div>
+
+							              <!-- Carousel nav  -->
+
+							              <!-- <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+							              <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a> -->
+							              
+							              
+							             
+								</div> 
+					            
+										<!--Slide Bootstrap-->
+
+								
 
 							</div>
 
@@ -156,6 +203,76 @@
 
 
 
+
+						</div>
+
+						<div class="globo-reflexiones-index">
+
+							<div class="close-btn">
+								<img src="{{ STATIC_URL }}img/close.png" alt="cerrar ventana">
+
+							</div>
+
+
+							<div class="reflexiones-main-container">
+
+								<h2 id="reflexiones-titulo" class="content-subtitle">
+
+										Audio Gratis
+										
+								</h2>
+								
+
+								
+
+								<div class="reflexiones-container">
+
+									<div class="reflexion-container">
+									
+									<h3  class="reflexion-title content-strong">
+										
+										Reflexion uno 
+
+									</h3>
+									<p class="reflexion-brief">
+										bla bla bla bla bla
+									</p>
+
+								</div>
+									
+
+
+									<div class="reflexion-container">
+										
+										<h3 class="reflexion-title content-strong">
+											Reflexion 2
+										</h3>
+										<div class="reflexion-brief">
+											brief 2
+										</div>
+
+									</div>
+
+									<div class="reflexion-container">
+										
+										<div class="reflexion-title content-strong">
+											Reflexion 3
+										</div>
+										<div class="reflexion-brief">
+											brief 3
+										</div>
+
+									</div>
+
+									
+
+									
+									
+
+								</div>
+
+							</div>
+								
 
 						</div>
 
@@ -178,7 +295,7 @@
 								Password:
 								<input type="password" name="password">
 								<input type="submit" class="submit-btn" value="entrar" name="login-btn" style=" text-align: left; border:0;
-								padding: 0 0 0 1.6em; font-size: .8em; background: url({{ STATIC_URL }}img/btn-2.png) no-repeat 0.5em .5em; height: 26px;">
+								padding: 0 0 0 1.6em; font-size: .8em; width:80%; background: url({{ STATIC_URL }}img/btn-2.png) no-repeat 0.5em .5em; height: 26px;">
 							</div>
 
 						</div>
@@ -229,160 +346,41 @@
 
 			</section>
 
-			<!-- <section class="content-main clear-fix">
-
-				<div class="index-curso-container drop-shadow clear-fix">
-
-
-					<div class="content-subtitle underline">
-							Curso: 
-					</div>
-
-					<div class="bar-horizontal">
-
-					</div>
-
-					<div class="content-2-1">
-
-						<div class="content-curso-title">
-
-
-							<span class="content-strong">
-								Abundancia:
-							</span>
-							<span class="content-subtitle underline">
-									7
-							</span>
-
-							<span class="">
-								Pasos Comprobados para vivirla día a día
-
-							</span>
-						</div>
-						<br>
-						<div class="bar-horizontal">
-						</div>
-						<div class="content-nfo">
-							Programa de coaching para mujeres
-						</div>
-						<br>
-
-						<div class="bar-horizontal">
-						</div>
-
-						<span class="content-strong">
-								Aprende a vivir de la abundancia y decirle adiós a la carencia
-						</span>
-
-						<div class="content-nfo list-2" style="width:90%;">
-							<span class="content-strong">
-								Programa de coaching virtual
-							</span>
-
-							en el que podrás transformarte a ti misma a lo largo de 7 sesiones, idealmente semanales, que han sido diseñadas para que obtengas resultados rápidos, y a las que trndrás acceso inmediato en el momento de tu compra. Es personalizado ya que te proporcionamos ejercicios en audio y video que vas a aplicar de manera independiente al curso, y que te van a permitir ser cada vez más clara y realizar avances de manera consistente en tu vida.
-
-							<br>
-							<br>
-							<span class="content-subtitle-2">
-
-								Precio 
-								<span class="content-strong">
-									oferta 
-								</span>
-								de lanzamiento!!!
-							</span>
-							<br>
-							<br>
-							<img src="{{ STATIC_URL }}img/banner-indx-producto.png">
-
-							<div class="flecha-abajo-cont">
-
-								<div class="content-subtitle-2 flecha-abajo-txt">
-									Próximamente
-								</div>
-								<img src="{{ STATIC_URL }}img/flecha-abajo.png" width="25%" border="0">
-
-							</div>
-
-
-
-						</div>
-
-					</div>
-
-						<section class="content-main content-2-2 drop-shadow">
-
-							<div class="content-subtitle-2">
-										Información del curso:	
-							</div>
-
-							<div class="content-strong">
-								¿Qué es abundancia?
-							</div>
-							<div class="content-nfo" style="width:90%;">
-								En lo personal he trabajado mucho este tema y lo conozco bien. <br>
-								¿A qué me refiero con abundancia? Un diccionario dice que hay mucho de algo. Ese Algo puede ser un sin numero de cosas como: 
-								<div class="content-strong">
-								Amigos, Familiares, pasiones, cariño y dinero.
-								</div>
-
-				<!--				
-								Pero también la vida puede estar llena de cosas malas, y aunque las malas suenen como un vacío o una carencia, este vacío puede llenar nuestra vida y traer todos esos sentimientos de angustia.
-								
-								
-
-								Lo <span class="content-strong">económico</span> también es un tipo de abundancia muy deseada y muy pensada, pero esta no es la única abundancia que exite, esta abarca mucho mas, esta es una percepción que tenemos de lo que tenemos o no. Se escucha mucho de las crisis últimamente y pensamos en este tipo de problemas como falta de dinero, aunque sea lo suficiente.
-								<br>
-								La <span class="content-strong">salud</span> es otro tipo de abundancia importante, ya que a veces la damos por sentado... hasta que nos falta.
-
 			
 
 
+					<section class="content-main clear-fix" style="padding:0.2em 0 1.2em 0;" >
 
-								<br>
-								Por eso te invito a que reflexiones y veas que tipo de abundancia es la que deseas atraer a tu vida. Te invito a que conozcas más los beneficios que tendrás al adquirir el curso de: 
-								<div class="content-strong">
-									Abundancia: 7 pasos comprobados para vivirla día a día. 
-								</div>
-								Programa de coaching para mujeres
-
-								<br>
-
-								Si quieres saber más sobre el curso te invito a que des 
-								<span class="content-stron">
-									click en el siguiente botón
-								</span>
-								y te de unos ejemplos de lo que aprenderás, dile adiós a la carencia y atrae el tipo de abundancia que quieres a tu vida!
-
-							</div>
-
-						
-						<br>
-						</section>
-
-				</div>
-					</section> -->
+						<div class="content-main clear-fix" style=" background: #fffefe;">	
 
 
-					<section class="content-main clear-fix" style="">
 
 							<div class="content-subtitle">
 									Testimonios: 
+
 							</div>
 
 							<div class="content-nfo" style="width: 90%; padding: 1em 0 2.5em 0;">
 
 								<p>
-
-								Decidí revisar la historia de mi vida porque no me gustaban mis actitudes, ya que vivia con miedos, lloraba mucho y no podía entender que era lo que causaba mi manera de actuar. Cuando trabaje con Gaby sentí como si una aspiradora hubiera pasado por mi cuerpo limpiando muchas cosas que no sabía que tenía, ahora me siento muy tranquila, fué más fácil y rápido de lo que pensaba, definitivamente valió la pena
+									Decidí revisar la historia de mi vida porque no me gustaban mis actitudes, ya que vivia con miedos, lloraba mucho y no podía entender que era lo que causaba mi manera de actuar. Cuando trabaje con Gaby sentí como si una aspiradora hubiera pasado por mi cuerpo limpiando muchas cosas que no sabía que tenía, ahora me siento muy tranquila, fué más fácil y rápido de lo que pensaba, definitivamente valió la pena
 								</p>
+
 
 							</div>
 
 							<div class="testimonio-autor">
 								M.M. 67 Años
 							</div>
+
+						
+
+						</div>
 					<section>
+
+						<script src="{{ STATIC_URL }}js/reflexiones-index.js">
+
+						</script>
 
 			
 
