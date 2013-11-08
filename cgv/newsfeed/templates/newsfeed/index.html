@@ -3,6 +3,6 @@
 {% block contenido %}
 	<form action="{% url 'index' %}" method="post">
 		{% csrf_token %}
-		{{ forma_subscripcion.as_p }}
+		{{ forma_subscripcion.email }}
 	</form>
 {% endblock %}
