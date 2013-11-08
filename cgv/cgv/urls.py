@@ -10,6 +10,6 @@ urlpatterns = patterns('',
 	url(r'^', include('newsfeed.urls')),
 	url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^blog/', include('blog.urls')),
     url(r'^Contacto/$', views.contacto, name = 'contacto'),
-    url(r'^Reflexiones/$', views.reflexiones, name = 'reflexiones'),
 )
