@@ -11,9 +11,10 @@ def reflexiones(request):
 	video             = reflexiones.filter(tags__nombre = 'video')
 	ebook             = reflexiones.filter(tags__nombre = 'ebook')
 	context           = {
-		'audio' : audio,
-		'video' : video,
-		'ebook' : ebook,
+		'audio'             : audio,
+		'video'             : video,
+		'ebook'             : ebook,
+		'forma_suscripcion' : forma_suscripcion,
 	}
 
 
