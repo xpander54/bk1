@@ -175,6 +175,11 @@
 									
 								{% for reflexion in reflexiones %}
 									
+									<div class="close-btn" style="display: none;">
+												<img src="{{ STATIC_URL }}img/close.png" alt="cerrar ventana">
+									</div>
+
+									
 									<div class="reflexion-container">
 									
 										<h3  class="reflexion-title content-strong">
@@ -188,7 +193,12 @@
 											
 										</p>
 
-										<div style="display: block">
+
+
+										<div class="reflexion-contenido" style="display: none">
+
+											
+
 											{{ reflexion.contenido|safe }}
 										</div>
 
@@ -197,30 +207,7 @@
 								{% endfor %}
 
 								
-									
-
-
-								<div class="reflexion-container">
-									
-									<h3 class="reflexion-title content-strong">
-										Reflexion 2
-									</h3>
-									<div class="reflexion-brief">
-										brief 2
-									</div>
-
-								</div>
-
-								<div class="reflexion-container">
-									
-									<div class="reflexion-title content-strong">
-										Reflexion 3
-									</div>
-									<div class="reflexion-brief">
-										brief 3
-									</div>
-
-								</div>
+						
 
 									
 
@@ -240,5 +227,10 @@
 
 
 	</section>
+
+
+	<script src="{{ STATIC_URL }}js/reflexiones.js">
+
+	</script>
 
 {% endblock %}
