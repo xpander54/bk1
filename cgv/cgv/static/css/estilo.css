@@ -60,7 +60,14 @@ body
 	background: linear-gradient(to bottom,  #fffefe 1%,#b4cedc 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffefe', endColorstr='#b4cedc',GradientType=0 ); /* IE6-9 */
 	width: 100%;
-	height: 1150px;
+}
+
+footer.main > section
+{
+	padding: 1.5em 0;
+	margin-bottom: 50px;
+	text-align: center;
+	font-weight: bold;
 }
 
 /*Navegación*/
