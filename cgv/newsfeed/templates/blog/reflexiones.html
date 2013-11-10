@@ -90,12 +90,14 @@
 
 		<p>
 			selecciona que tipo de material gratuito quieres acceder, aparecerá un menú con todo el contenido extra.
+
+			<h2 class="content-strong" style="line-height: .5em;">
+				Que lo disfrutes!
+			</h2>
+
+			<br>
+
 		</p>
-
-		<h2 class="content-strong">
-			Que lo disfrutes!
-		</h2>
-
 			<div class="reflexiones-btn1">
 
 						<div class="reflexiones-btn-cont drop-shadow">
@@ -106,7 +108,12 @@
 
 							</div>
 
+							<br>
+
 							<img src="{{ STATIC_URL }}img/icon-mp3.png">
+
+							<br>
+
 
 							<div class="content-btn-nfo">
 								Escucha Mis Audios Quincenales
@@ -124,9 +131,9 @@
 								Videos Gratis
 
 							</div>
-
+							<br>
 							<img src="{{ STATIC_URL }}img/icon-video.png">
-
+							<br>
 							<div class="content-btn-nfo">
 								Videos Gratis Quincenales
 							</div>		
@@ -143,9 +150,9 @@
 								E-Books Gratis
 
 							</div>
-
+							<br>
 							<img src="{{ STATIC_URL }}img/icon-pdf.png">
-
+							<br>
 							<div class="content-btn-nfo">
 								Descarga E-books Gratis
 							</div>		
@@ -175,27 +182,23 @@
 									
 								{% for reflexion in reflexiones %}
 									
-									<div class="close-btn" style="display: none;">
+									<div class="close-btn" id="reflexion-close-btn-{{ reflexion.id }}"  data-nfo="{{ reflexion.id }}" style="display: none;">
 												<img src="{{ STATIC_URL }}img/close.png" alt="cerrar ventana">
 									</div>
-
-									
-									<div class="reflexion-container">
+		
+									<div class="reflexion-container" data-nfo="{{ reflexion.id }}" id="reflexion-{{ reflexion.id }}">
 									
 										<h3  class="reflexion-title content-strong">
-											
+				
 											{{ reflexion.titulo }}
-
 										</h3>
 										<p class="reflexion-brief">
-
-											{{ reflexion.abstract }}
-											
+											{{ reflexion.abstract }}	
 										</p>
 
 
 
-										<div class="reflexion-contenido" style="display: none">
+										<div class="reflexion-contenido" data-nfo="reflexion-{{ reflexion.id }}" style="display: none;">
 
 											
 

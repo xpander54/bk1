@@ -3,28 +3,41 @@ $(document).ready(function() {
 
 	var reflexionOpen = 0;
 
-	$(".reflexion-container").click(function() {
-		//alert("click");
+	$(".reflexion-container").click(function(evt) {
+
+		$this = $(this);
+		var reflexionContId = "#" + $this.attr('id');
+		var reflexionId = $this.data('nfo');
+		var reflexionBtn = "#reflexion-close-btn-" + reflexionId;
+		console.log(reflexionBtn);
 		if(reflexionOpen == 0)
 		{
-			console.log("reflexionOpen = " + reflexionOpen);
-			$(".reflexion-contenido").css("display", "block");
-			$(".close-btn").css("display", "block");
+
+			console.log(reflexionContId);
+			$(reflexionContId + " .reflexion-contenido").css("display", "block");
+			$(reflexionBtn).css("display", "block");
 			reflexionOpen = 1;
-			console.log("reflexionOpen = " + reflexionOpen);
 		}
 		
 
 	});
 
-	$(".close-btn").click(function() {
+	$(".close-btn").click(function(evt) {
+
+		$this = $(this);
+
+		var reflexionId = $this.data('nfo');
+		console.log("close btn "+reflexionId);
+		var reflexionCloseBtn = "#reflexion-close-btn-" + reflexionId;
+		var reflexionContent = "#reflexion-" + reflexionId;
+		console.log("se tiene que cerrar el boton " + reflexionCloseBtn); 
 
 		if(reflexionOpen == 1)
 		{
 			console.log("close btn reflexionOpen = " + reflexionOpen);
 
-			$(".reflexion-contenido").css("display", "none");
-			$(".close-btn").css("display", "none");
+			$(reflexionContent + " .reflexion-contenido").css("display", "none");
+			$(reflexionCloseBtn).css("display", "none");
 
 			reflexionOpen = 0;	
 
@@ -34,6 +47,18 @@ $(document).ready(function() {
 
 	});	
 
+	$(".reflexiones-btn1").click(function() {
+
+		console.log("AUDIO!");
+
+
+
+
+	});	
+
+
+
+
 	$('.carousel').carousel({
           interval: 3000,
           pause: "false"
@@ -42,3 +67,5 @@ $(document).ready(function() {
 
 
 });
+
+
