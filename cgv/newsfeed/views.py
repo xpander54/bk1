@@ -10,6 +10,10 @@ from django.shortcuts import render, get_object_or_404
 from newsfeed.models import Subscriptor, Feed
 from newsfeed.forms import EmailNewsfeedForm, EmailForm
 
+#Mover esto a otro lado (parche temporal)
+from blog.models import Post
+
+
 # Movel a views.py en cursos >
 def index(request):
 
@@ -46,8 +50,19 @@ def index(request):
 		forma_subscripcion = EmailNewsfeedForm()
 		
 
+	reflexiones = Post.objects.filter(estado = 'p', destacado = True, categoria__nombre = 'reflexiones')
+	video       = reflexiones.filter(tags__nombre = 'video')
+	audio       = reflexiones.filter(tags__nombre = 'audio')
+	ebook       = reflexiones.filter(tags__nombre = 'ebook')
+	testimonios = Post.objects.filter(categoria__nombre = 'testimonios')
+
 	context = {
-		'forma_subscripcion' : forma_subscripcion, 
+		# Esto hay que moverlo!!!!
+		'forma_subscripcion' : forma_subscripcion,
+		'video'              : video,
+		'audio'              : audio,
+		'ebook'              : ebook,
+		'testimonios'        : testimonios,
 	}
 	
 	return render(request, 'newsfeed/index.html', context)
