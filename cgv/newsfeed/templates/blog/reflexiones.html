@@ -84,6 +84,18 @@
 
 		<div class="reflexiones-btns-container">
 
+			<h2 class="content-subtitle">
+			Selecciona la opción deseada
+		</h2>
+
+		<p>
+			selecciona que tipo de material gratuito quieres acceder, aparecerá un menú con todo el contenido extra.
+		</p>
+
+		<h2 class="content-strong">
+			Que lo disfrutes!
+		</h2>
+
 			<div class="reflexiones-btn1">
 
 						<div class="reflexiones-btn-cont drop-shadow">
@@ -147,5 +159,78 @@
 		</div>
 
 	</section>
+
+	<section class="content-main clear-fix" style="background: #fffefe;">
+
+
+		<h2 class="content-subtitle">
+			
+			Todo el contenido.
+
+		</h2>
+
+
+		<div class="reflexiones-container" style="margin: 0;">
+
+									
+								{% for reflexion in reflexiones %}
+									
+									<div class="close-btn" style="display: none;">
+												<img src="{{ STATIC_URL }}img/close.png" alt="cerrar ventana">
+									</div>
+
+									
+									<div class="reflexion-container">
+									
+										<h3  class="reflexion-title content-strong">
+											
+											{{ reflexion.titulo }}
+
+										</h3>
+										<p class="reflexion-brief">
+
+											{{ reflexion.abstract }}
+											
+										</p>
+
+
+
+										<div class="reflexion-contenido" style="display: none">
+
+											
+
+											{{ reflexion.contenido|safe }}
+										</div>
+
+									</div>								
+	
+								{% endfor %}
+
+								
+						
+
+									
+
+									
+									
+
+								
+
+		</div>
+								
+
+
+
+
+	
+		
+
+
+	</section>
+
+
+	<script src="{{ STATIC_URL }}js/reflexiones.js">
+
+	</script>
 
 {% endblock %}

@@ -14,6 +14,7 @@ def reflexiones(request):
 		'audio'             : audio,
 		'video'             : video,
 		'ebook'             : ebook,
+		'reflexiones' 		: reflexiones,
 		'forma_suscripcion' : forma_suscripcion,
 	}
 
