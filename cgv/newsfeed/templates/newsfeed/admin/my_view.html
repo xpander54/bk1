@@ -1,0 +1,32 @@
+{% extends "admin/base_site.html" %}
+
+{% block breadcrumbs %}
+<ul class="grp-horizontal-list">
+	<li><a href="/admin/">Inicio</a></li>
+	<li><a href="/admin/newsfeed/">Newsfeed</a></li>
+	<li><a href="/admin/newsfeed/suscriptor/">Suscriptor</a></li>
+	<li>Enviar Newsfeed</li>
+</ul>
+{% endblock %}
+
+{% block content %}
+	<section class="newsfeed-send">
+		<form action="/admin/newsfeed/subscriptor/my_view/" method="post">
+			{% csrf_token %}
+			<fieldset class="grp-module">
+				<div class="grp-row grp-cells-1 feed ">
+					<label for="titulo">Título</label>
+					<input type="text" name="titulo" id="titulo", placeholder="Título del Newsfeed">
+				</div>
+				<div class="grp-row grp-cells-1 feed ">
+					<label for="titulo">Newsfeed</label>
+					<textarea name="titulo" id="titulo"></textarea>
+				</div>
+				<div class="grp-row grp-cells-1 feed ">
+					
+					<input type="submit" value="Enviar" name="submit">
+				</div>
+			</fieldset>
+		</form>
+	</section>
+{% endblock %}
