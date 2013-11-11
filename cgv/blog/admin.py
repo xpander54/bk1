@@ -30,13 +30,22 @@ class PostAdmin(admin.ModelAdmin):
 	readonly_fields = ('usuario', 'creado', 'modificado',)
 
 
-
 	def save_model(self, request, obj, form, change):
 
 		if not change:
 			obj.usuario = request.user
 
 		obj.save()
+
+
+	class Media:
+
+		js = [
+			'admin/js/tinymce/tinymce.min.js',
+			'admin/js/tinymce/config.js',
+		]
+
+
 
 admin.site.register(Categoria)
 admin.site.register(Tag)
