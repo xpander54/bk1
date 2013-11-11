@@ -8,8 +8,12 @@ class CicloAdmin(admin.ModelAdmin):
 
 
 class CursoAdmin(admin.ModelAdmin):
-	pass
-
+	
+	class Media:
+		js = [
+			'admin/js/tinymce/tinymce.min.js',
+			'admin/js/tinymce/config.js',
+		]
 	
 
 

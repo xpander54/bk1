@@ -42,7 +42,7 @@ class PostAdmin(admin.ModelAdmin):
 
 		js = [
 			'admin/js/tinymce/tinymce.min.js',
-			'admin/js/tinymce/config.js'
+			'admin/js/tinymce/config.js',
 		]
 
 
