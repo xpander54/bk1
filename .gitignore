@@ -6,3 +6,5 @@ cgv/cgv/settings.py
 .DS_Store
 
 .DS_Store
+
+cgv/cgv/media/*
