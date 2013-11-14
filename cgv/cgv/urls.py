@@ -12,5 +12,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/', include('blog.urls')),
     url(r'^Contacto/$', views.contacto, name = 'contacto'),
+    url(r'^login/$', views.login, name = 'login'),
+	url(r'^registro/$', views.registro, name = 'registro'),
     
 )

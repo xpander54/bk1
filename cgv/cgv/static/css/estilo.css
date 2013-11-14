@@ -251,6 +251,11 @@ header .main
 	font-family: 'copperplate_bold', 'serif';
 }
 
+.social-media
+{
+	margin: 30em 0 0 0;
+}
+
 .content-subtitle-3
 {
 	color: #8a2e17;
