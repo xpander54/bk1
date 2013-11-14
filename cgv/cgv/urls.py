@@ -17,5 +17,6 @@ urlpatterns = patterns('',
     url(r'^Contacto/$', views.contacto, name = 'contacto'),
     url(r'^login/$', views.login, name = 'login'),
 	url(r'^registro/$', views.registro, name = 'registro'),    
-) + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+	url(r'^registro/$', views.registro, name = 'registro'),
+)+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
