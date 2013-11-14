@@ -1,0 +1,15 @@
+<div>
+	<ul>
+		{% for galeria in galerias %}
+		<li>{{ galeria.nombre }}</li>
+		{% endfor %}	
+	</ul>
+</div>
+
+<div>
+	<ul>
+		{% for imagen in imagenes %}
+			<li>{{ imagen.thumb|safe }}</li>
+		{% endfor %}
+	</ul>
+</div>
