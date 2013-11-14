@@ -12,6 +12,7 @@ urlpatterns = patterns('',
 	url(r'^', include('newsfeed.urls')),
 	url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^galerias/', include('galerias.urls')),
     url(r'^blog/', include('blog.urls')),
     url(r'^Contacto/$', views.contacto, name = 'contacto'),
 ) + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
