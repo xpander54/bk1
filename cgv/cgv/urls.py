@@ -15,4 +15,7 @@ urlpatterns = patterns('',
     url(r'^galerias/', include('galerias.urls')),
     url(r'^blog/', include('blog.urls')),
     url(r'^Contacto/$', views.contacto, name = 'contacto'),
+    url(r'^login/$', views.login, name = 'login'),
+	url(r'^registro/$', views.registro, name = 'registro'),    
 ) + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+

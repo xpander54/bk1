@@ -1,0 +1,184 @@
+
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+
+
+	<div class="reflexiones-cont-2cols clear-fix">
+		
+
+		<section class="content-main clear-fix reflexiones-col-left" style="background: #fffefe;">
+
+				
+			<h2 class="content-subtitle">
+
+				Registro de usuarios
+			</h2>
+
+				
+					
+
+			<p>
+						
+				
+				<span style="font-size:1.3em; padding:1em; font-weight: bold; line-height:1.5em;">
+				
+				Tus datos estan seguros con nosotros. Registrate para disfrutar de nuestro mejor contenido
+
+				</span>
+				
+					
+				
+			</p>
+
+			
+
+			<div class="content-mail-txt-area" >
+
+				<!-- <input type="text" name="mail-newsletter"> -->
+				
+				<form action="/registro/" method="post">
+					{% csrf_token %}
+				    {{ registro_form.non_field_errors }}
+				    <div class="fieldWrapper">
+				        {{ registro_form.user.errors }}
+				        <label for="id_cc_myself">Usuario</label>
+				        {{ registro_form.user }}
+				    </div>
+				    <div class="fieldWrapper">
+				        {{ registro_form.nombre.errors }}
+				        <label for="id_cc_myself">Nombre</label>
+				        {{ registro_form.nombre }}
+				    </div>
+				    <div class="fieldWrapper">
+				        {{ registro_form.apellido.errors }}
+				        <label for="id_cc_myself">Apellido</label>
+				        {{ registro_form.apellido }}
+				    </div>
+				    <div class="fieldWrapper">
+				        {{ registro_form.nacimiento.errors }}
+				        <label for="id_cc_myself">Fecha de Nacimiento</label>
+				        {{ registro_form.nacimiento }}
+				    </div>   
+				    <div class="fieldWrapper">
+				        {{ registro_form.email.errors }}
+				        <label for="id_sender">e-mail:</label>
+				        {{ registro_form.email }}
+				    </div>
+				    <div class="fieldWrapper">
+				        {{ registro_form.email_check.errors }}
+				        <label for="id_sender">Confirma tu e-mail</label>
+				        {{ registro_form.email_check }}
+				    </div>
+				    <div class="fieldWrapper">
+				        {{ registro_form.passwd.errors }}
+				        <label for="id_sender">Password:</label>
+				        {{ registro_form.passwd }}
+				    </div>
+				    <div class="fieldWrapper">
+				        {{ registro_form.passwd_check.errors }}
+				        <label for="id_sender">Confirma tu Password:</label>
+				        {{ registro_form.passwd_check }}
+				    </div>
+				    
+				    <p><input type="submit" value="Enviar" /></p>
+				</form>
+			</div>
+			
+		</section>
+				
+
+
+		<section class="content-main clear-fix reflexiones-col-right" style="background: #fffefe; font-size:1.1em; line-height:.8; height: auto;">
+
+			<h2 class="content-subtitle border-bottom">
+				Material Interactivo
+			</h2>
+
+					
+				
+					<div class="content-3-1 clear-fix" style="width:90%;">
+
+						<div class="content-btn-1" style="padding:1em .5em;" data-type="audio" style="margin:0; paddig:0; ">
+
+							<div class="content-subtitle-2">
+								Audio Gratis
+
+							</div>
+
+
+
+							<img src="{{ STATIC_URL }}img/icon-mp3.png">
+
+							<div class="content-btn-nfo">
+								Escucha Mis Audios Quincenales
+							</div>
+
+						</div>
+
+						<div class="content-btn-1"  style="padding:1em .5em;" data-type="video">
+
+							<div class="content-subtitle-2">
+								Video Gratis
+							</div>
+
+							<img src="{{ STATIC_URL }}img/icon-video.png">
+
+							<div class="content-btn-nfo">
+								Videos Gratis Quincenales
+							</div>
+
+						</div>
+
+						<div class="content-btn-1" style="padding:1em .5em;" data-type="ebook">
+
+							<div class="content-subtitle-2">
+								E-Books Gratis
+							</div>
+
+							<img src="{{ STATIC_URL }}img/icon-pdf.png">
+
+							<div class="content-btn-nfo">
+								Descarga E-books Gratis
+							</div>
+
+						</div>
+
+					</div>	
+
+				<div class="social-media">
+					<img src="{{ STATIC_URL }}img/reflexiones-curso.png" alt="reflexiones gaby valdes">
+
+					
+
+
+					<div class="content-subtitle-2  border-bottom" style="margin-top: 30%;">
+
+						Redes Sociales
+						
+					</div>
+					<a href="http://www.facebook.com/gaby.valdesh" >
+
+						<img src="{{ STATIC_URL }}img/facebook_32.png">
+
+					</a>
+
+					<a href="https://twitter.com/gabyvaldes8">
+
+
+						<img src="{{ STATIC_URL }}img/twitter_32.png">
+
+					</a>
+
+				</div>
+			
+
+
+	
+		</section>
+
+	</div>
+
+
+{% endblock %}

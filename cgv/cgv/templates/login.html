@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Gaby Valdes Login</title>
+	<link href="{{ STATIC_URL }}css/login.css" rel="stylesheet" />
+	<link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+	<section class="login-container drop-shadow">
+
+
+		<div class="login-img">
+			<img src="{{ STATIC_URL }}img/logo-head.png" alt="">
+		</div>
+
+		<p>
+			Ingresa tus datos para continuar
+		</p>
+
+		<form action="/Contacto/" method="post">
+			{% csrf_token %}
+		    {{ login_form.non_field_errors }}
+		    <div class="fieldWrapper">
+		        {{ login_form.user.errors }}
+		        <label for="id_cc_myself">Usuario</label>
+		        {{ login_form.user }}
+		    </div>
+		    <div class="fieldWrapper">
+		        {{ login_form.passwd.errors }}
+		        <label for="id_subject">Password:</label>
+		        {{ login_form.passwd }}
+		    </div> 
+
+		    
+		    <br> 
+		    		    
+		    <p><input type="submit" value="Entrar" /></p>
+		</form>
+			
+	<br>
+				<a href="/">Olvidé mi contraseña</a>  
+	</section>
+
+	
+
+</body>
+</html>

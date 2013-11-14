@@ -1,0 +1,141 @@
+
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+	<div class="reflexiones-cont-2cols clear-fix">
+		
+
+		<section class="content-main clear-fix reflexiones-col-left" style="background: #fffefe;">
+
+				
+			<h2 class="content-subtitle">
+
+				
+			</h2>
+
+				
+					
+
+			<p>
+						
+				
+				<span style="font-size:1.3em; padding:1em; font-weight: bold; line-height:1.5em;">
+				
+				Déjanos un mensaje y muy pronto alguien se comunicará contigo.
+
+				</span>
+				
+					
+				
+			</p>
+
+			
+
+			<div class="content-mail-txt-area" >
+
+				<!-- <input type="text" name="mail-newsletter"> -->
+				
+				<form action="/Contacto/" method="post">
+					{% csrf_token %}
+				    {{ forma_contacto.non_field_errors }}
+				    <div class="fieldWrapper">
+				        {{ forma_contacto.nombre.errors }}
+				        <label for="id_cc_myself">Nombre</label>
+				        {{ forma_contacto.nombre }}
+				    </div>
+				    <div class="fieldWrapper">
+				        {{ forma_contacto.subject.errors }}
+				        <label for="id_subject">Asunto:</label>
+				        {{ forma_contacto.subject }}
+				    </div>    
+				    <div class="fieldWrapper">
+				        {{ forma_contacto.email.errors }}
+				        <label for="id_sender">e-mail:</label>
+				        {{ forma_contacto.email }}
+				    </div>
+				    <div class="fieldWrapper">
+				        {{ forma_contacto.message.errors }}
+				        <label for="id_message">Mensaje:</label>
+				        {{ forma_contacto.message }}
+				    </div>
+				    
+				    <p><input type="submit" value="Enviar" /></p>
+				</form>
+			</div>
+			
+		</section>
+				
+
+
+		<section class="content-main clear-fix reflexiones-col-right" style="height: 335px; background: #fffefe; font-size:1.1em; line-height:1.5em;">
+
+			<h2 class="content-subtitle border-bottom">
+				Dirección
+			</h2>
+
+			<p>
+				Rio Churubusco 459,
+				<br>
+				Col. Unidad Modelo
+				<br>
+				Delegación Iztapalapa
+				<br>
+				México D.F.
+				<br>
+				CP. 09090
+			</p>
+
+			<p>
+				Tel. +(52) 55 564 66473
+			</p>
+
+			<p>
+				<a href="mailto:contacto@gabyvaldes.com">
+					contacto@gabyvaldes.com
+				</a>
+			</p>
+
+
+
+				<div class="content-subtitle-2 border-bottom">
+					Redes Sociales
+					
+				</div>
+				<a href="http://www.facebook.com/gaby.valdesh" >
+
+					<img src="{{ STATIC_URL }}img/facebook_32.png">
+
+				</a>
+
+				<a href="https://twitter.com/gabyvaldes8">
+
+
+					<img src="{{ STATIC_URL }}img/twitter_32.png">
+
+				</a>
+
+			
+
+
+	
+		</section>
+
+	</div>
+
+	<section class="content-main clear-fix" style="text-align: center; background: #fffefe;">
+
+
+		<iframe width="98%" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.mx/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=rio+churubusco+459,+iztapalapa,+df&amp;aq=&amp;sll=19.358502,-99.168284&amp;sspn=0.017086,0.011694&amp;g=rio+churubusco+459,+unidad+modelo,+iztapalapa,+df&amp;ie=UTF8&amp;hq=&amp;hnear=R%C3%ADo+Churubusco+459,+Aculco,+Iztapalapa,+Ciudad+de+M%C3%A9xico,+Distrito+Federal&amp;ll=19.373302,-99.103603&amp;spn=0.036072,0.023389&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com.mx/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=rio+churubusco+459,+iztapalapa,+df&amp;aq=&amp;sll=19.358502,-99.168284&amp;sspn=0.017086,0.011694&amp;g=rio+churubusco+459,+unidad+modelo,+iztapalapa,+df&amp;ie=UTF8&amp;hq=&amp;hnear=R%C3%ADo+Churubusco+459,+Aculco,+Iztapalapa,+Ciudad+de+M%C3%A9xico,+Distrito+Federal&amp;ll=19.373302,-99.103603&amp;spn=0.036072,0.023389&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">Ver mapa más grande</a></small>
+	
+
+
+	</section>
+
+
+
+
+	
+
+
+{% endblock %}
