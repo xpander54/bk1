@@ -84,7 +84,21 @@
 
 		<div class="reflexiones-btns-container">
 
-			<div class="reflexiones-btn1">
+		<h2 class="content-subtitle">
+			Selecciona la opción deseada
+		</h2>
+
+		<p>
+			selecciona que tipo de material gratuito quieres acceder, aparecerá un menú con todo el contenido extra.
+
+			<h2 class="content-strong" style="line-height: .5em;">
+				Que lo disfrutes!
+			</h2>
+
+			<br>
+
+		</p>
+			<div class="reflexiones-btn1" data-nfo="audio">
 
 						<div class="reflexiones-btn-cont drop-shadow">
 							
@@ -94,7 +108,12 @@
 
 							</div>
 
+							<br>
+
 							<img src="{{ STATIC_URL }}img/icon-mp3.png">
+
+							<br>
+
 
 							<div class="content-btn-nfo">
 								Escucha Mis Audios Quincenales
@@ -103,7 +122,7 @@
 						</div>
 
 			</div>
-			<div class="reflexiones-btn1">
+			<div class="reflexiones-btn1" data-nfo="video">
 				
 				<div class="reflexiones-btn-cont drop-shadow">
 							
@@ -112,9 +131,9 @@
 								Videos Gratis
 
 							</div>
-
+							<br>
 							<img src="{{ STATIC_URL }}img/icon-video.png">
-
+							<br>
 							<div class="content-btn-nfo">
 								Videos Gratis Quincenales
 							</div>		
@@ -122,18 +141,18 @@
 				</div>
 
 			</div>
-			<div class="reflexiones-btn1">
+			<div class="reflexiones-btn1" data-nfo="ebook">
 				
-				<div class="reflexiones-btn-cont drop-shadow">
+				<div class="reflexiones-btn-cont drop-shadow" >
 							
 
 							<div class="content-subtitle-2">
 								E-Books Gratis
 
 							</div>
-
+							<br>
 							<img src="{{ STATIC_URL }}img/icon-pdf.png">
-
+							<br>
 							<div class="content-btn-nfo">
 								Descarga E-books Gratis
 							</div>		
@@ -147,5 +166,120 @@
 		</div>
 
 	</section>
+
+	<section class="content-main clear-fix" style="background: #fffefe;">
+
+
+		<h2 class="content-subtitle" id="reflexiones-list-title">
+			
+			Todo el contenido.
+
+		</h2>
+
+{# reflexiones #}
+
+		<div class="reflexiones-container" id="container-reflexiones" style="margin: 0;">					
+			{% for reflexion in reflexiones %}
+				<div class="close-btn" id="reflexion-close-btn-{{ reflexion.id }}" data-type="reflexion"  data-nfo="{{ reflexion.id }}" style="display: none;">
+							<img src="{{ STATIC_URL }}img/close.png" alt="cerrar ventana">
+				</div>
+				<div class="reflexion-container" data-type="reflexion" data-nfo="{{ reflexion.id }}" id="reflexion-{{ reflexion.id }}">
+					<h3  class="reflexion-title content-strong">
+						{{ reflexion.titulo }}
+					</h3>
+					<p class="reflexion-brief">
+						{{ reflexion.abstract }}	
+					</p>
+					<div class="reflexion-contenido" data-nfo="reflexion-{{ reflexion.id }}" style="display: none;">
+						{{ reflexion.contenido|safe }}
+					</div>
+				</div>								
+			{% endfor %}
+		</div>
+								
+
+{# /reflexiones #}
+	
+	{# audio #}
+
+		<div class="reflexiones-container" id="container-audio" style="margin: 0; display:none;">					
+			{% for audio in audio %}
+				<div class="close-btn" data-type="audio" id="audio-close-btn-{{ audio.id }}"  data-nfo="{{ audio.id }}" style="display: none;">
+							<img src="{{ STATIC_URL }}img/close.png" alt="cerrar ventana">
+				</div>
+				<div class="reflexion-container" data-type="audio" data-nfo="{{ audio.id }}" id="audio-{{ audio.id }}">
+					<h3  class="reflexion-title content-strong">
+						{{ audio.titulo }}
+					</h3>
+					<p class="reflexion-brief">
+						{{ audio.abstract }}	
+					</p>
+					<div class="reflexion-contenido" data-nfo="reflexion-{{ audio.id }}" style="display: none;">
+						{{ audio.contenido|safe }}
+					</div>
+				</div>								
+			{% endfor %}
+		</div>
+
+	{# /audio #}
+
+
+
+	{# video #}
+
+		<div class="reflexiones-container" id="container-video" style="display: none; margin: 0;">					
+			{% for video in video %}
+				<div class="close-btn" data-type="video" id="video-close-btn-{{ video.id }}"  data-nfo="{{ video.id }}" style="display: none;">
+							<img src="{{ STATIC_URL }}img/close.png" alt="cerrar ventana">
+				</div>
+				<div class="reflexion-container" data-type="video" data-nfo="{{ video.id }}" id="video-{{ video.id }}">
+					<h3  class="reflexion-title content-strong">
+						{{ video.titulo }}
+					</h3>
+					<p class="reflexion-brief">
+						{{ video.abstract }}	
+					</p>
+					<div class="reflexion-contenido" data-nfo="reflexion-{{ video.id }}" style="display: none;">
+						{{ video.contenido|safe }}
+					</div>
+				</div>								
+			{% endfor %}
+		</div>
+
+	{# /video #}
+
+
+
+	{# ebook #}
+
+	<div class="reflexiones-container" id="container-ebook"  style="margin: 0; display: none;">					
+			{% for ebook in ebook %}
+				<div class="close-btn" data-type="ebook" id="ebook-close-btn-{{ ebook.id }}"  data-nfo="{{ ebook.id }}" style="display: none;">
+							<img src="{{ STATIC_URL }}img/close.png" alt="cerrar ventana">
+				</div>
+				<div class="reflexion-container" data-type="ebook" data-nfo="{{ ebook.id }}" id="ebook-{{ ebook.id }}">
+					<h3  class="reflexion-title content-strong">
+						{{ ebook.titulo }}
+					</h3>
+					<p class="reflexion-brief">
+						{{ ebook.abstract }}	
+					</p>
+					<div class="reflexion-contenido" data-nfo="reflexion-{{ ebook.id }}" style="display: none;">
+						{{ ebook.contenido|safe }}
+					</div>
+				</div>								
+			{% endfor %}
+		</div>
+
+	{# /ebook #}
+		
+
+
+	</section>
+
+
+	<script src="{{ STATIC_URL }}js/reflexiones.js">
+
+	</script>
 
 {% endblock %}

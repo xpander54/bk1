@@ -2,6 +2,8 @@ from django.shortcuts import render
 from newsfeed.forms import EmailNewsfeedForm
 from blog.models import Post
 
+def reflexion(request):
+	return render(request, 'reflexion.html')
 
 def reflexiones(request):
 

@@ -14,5 +14,4 @@ urlpatterns = patterns('',
     url(r'^Contacto/$', views.contacto, name = 'contacto'),
     url(r'^login/$', views.login, name = 'login'),
 	url(r'^registro/$', views.registro, name = 'registro'),
-    
 )
