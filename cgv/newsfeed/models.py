@@ -8,12 +8,14 @@ class Feed(models.Model):
 
     nombre      = models.CharField(max_length = 200)
     descripcion = models.TextField(u'descripción', blank = True)
+    creado      = models.DateTimeField(u'fecha de creación', auto_now_add = True)
+    modificado  = models.DateTimeField(u'última modificación', auto_now = True)
 
     def __unicode__(self):
     	return self.nombre
 
 
-class Subscriptor(models.Model):
+class Suscriptor(models.Model):
 
 	feed       = models.ForeignKey(Feed)
 	email      = models.EmailField(max_length = 100, unique = True)

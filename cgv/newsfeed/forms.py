@@ -1,9 +1,9 @@
 from django import forms
-from newsfeed.models import Subscriptor
+from newsfeed.models import Suscriptor
 
 class EmailNewsfeedForm(forms.ModelForm):
 	class Meta:
-		model  = Subscriptor
+		model  = Suscriptor
 		fields = ('email',)
 
 

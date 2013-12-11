@@ -10,23 +10,49 @@
 {% endblock %}
 
 {% block content %}
-	<section class="newsfeed-send">
-		<form action="/admin/newsfeed/subscriptor/my_view/" method="post">
-			{% csrf_token %}
+<div id="grp-content-container">
+	<form enctype="multipart/form-data" action="" method="post" id="feed_form">
+		{% csrf_token %}
+		<div>   
 			<fieldset class="grp-module">
-				<div class="grp-row grp-cells-1 feed ">
-					<label for="titulo">Título</label>
-					<input type="text" name="titulo" id="titulo", placeholder="Título del Newsfeed">
+				<div class="grp-row grp-cells-1 nombre ">
+					<div class="l-2c-fluid l-d-4">
+						<div class="c-1">
+							<label for="id_titulo" class="required">Título</label>
+						</div>
+						<div class="c-2">
+							<input class="vTextField" id="id_titulo" maxlength="200" name="titulo" type="text">
+						</div>
+					</div>
 				</div>
-				<div class="grp-row grp-cells-1 feed ">
-					<label for="titulo">Newsfeed</label>
-					<textarea name="titulo" id="titulo"></textarea>
-				</div>
-				<div class="grp-row grp-cells-1 feed ">
-					
-					<input type="submit" value="Enviar" name="submit">
+				<div class="grp-row grp-cells-1 descripcion ">
+					<div class="l-2c-fluid l-d-4">
+						<div class="c-1">
+							<label for="id_newsfeed">Feed</label>
+						</div>
+						<div class="c-2">
+							<textarea class="vLargeTextField" cols="40" id="id_feed" name="feed" rows="10"></textarea>
+						</div>
+					</div>
 				</div>
 			</fieldset>
-		</form>
-	</section>
+			<footer class="grp-module grp-submit-row grp-fixed-footer">
+				<header style="display:none">
+					<h1>Submit Options</h1>
+				</header>
+				<ul>
+					<li><input type="submit" value="Enviar" class="grp-button grp-default" name="enviar"></li>
+				</ul>
+			</footer>
+			<script type="text/javascript">
+				(function($){
+					$(document).ready(function() {
+						$('form#feed_form :input:visible:enabled:first').focus()
+					});
+				}(grp.jQuery));
+			</script>          
+		</div>
+	</form>
+
+</div>
 {% endblock %}

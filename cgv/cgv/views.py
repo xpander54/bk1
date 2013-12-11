@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from newsfeed.models import Subscriptor
 from newsfeed.forms import EmailNewsfeedForm
 from django.http import HttpResponseRedirect, HttpResponse
 from cgv.forms import ContactForm

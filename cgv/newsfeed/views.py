@@ -7,7 +7,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, get_object_or_404
 
-from newsfeed.models import Subscriptor, Feed
+from newsfeed.models import Suscriptor, Feed
 from newsfeed.forms import EmailNewsfeedForm, EmailForm
 
 #Mover esto a otro lado (parche temporal)
@@ -19,14 +19,14 @@ def index(request):
 
 	if request.method == 'POST':
 
-		forma_subscripcion = EmailNewsfeedForm(request.POST)
+		forma_suscripcion = EmailNewsfeedForm(request.POST)
 
-		if forma_subscripcion.is_valid():
+		if forma_suscripcion.is_valid():
 
-			subscriptor = forma_subscripcion.save(commit = False)
-			subscriptor.feed = Feed.objects.get(pk = 2)
+			suscriptor = forma_suscripcion.save(commit = False)
+			suscriptor.feed = Feed.objects.get(pk = 2)
 			# PASAR ESTO AL MODELO >
-			subscriptor.codigo = __generate_code()
+			suscriptor.codigo = __generate_code()
 			# PASAR ESTO AL MODELO <
 
 			email_subject = "Confrimación subscripción Neewsfeed CGV"
@@ -34,12 +34,12 @@ def index(request):
 				Para confirmar su subscripción al neewsfeed visite el siguiente liga:
 
 				http://localhost:8000/%s/newsfeed-confirm/
-			""" % subscriptor.codigo
-			email_to     = subscriptor.email
+			""" % suscriptor.codigo
+			email_to     = suscriptor.email
 
 			if __send_email(email_subject, email_message, email_to):
 
-				subscriptor.save()
+				suscriptor.save()
 				return HttpResponseRedirect('/')
 				
 			else:
@@ -47,7 +47,7 @@ def index(request):
 
 
 	else:
-		forma_subscripcion = EmailNewsfeedForm()
+		forma_suscripcion = EmailNewsfeedForm()
 		
 
 	reflexiones = Post.objects.filter(estado = 'p', destacado = True, categoria__nombre = 'reflexiones')
@@ -58,7 +58,7 @@ def index(request):
 
 	context = {
 		# Esto hay que moverlo!!!!
-		'forma_subscripcion' : forma_subscripcion,
+		'forma_suscripcion' : forma_suscripcion,
 		'video'              : video,
 		'audio'              : audio,
 		'ebook'              : ebook,
@@ -71,12 +71,12 @@ def index(request):
 
 def newsfeed_confirm(request, code):
 
-	subscriptor = get_object_or_404(Subscriptor, codigo = code)
+	suscriptor = get_object_or_404(Suscriptor, codigo = code)
 
-	if subscriptor.activo == False:
+	if suscriptor.activo == False:
 
-		subscriptor.activo = True
-		subscriptor.save()
+		suscriptor.activo = True
+		suscriptor.save()
 
 		return HttpResponse('Correo Confirmado.')
 
@@ -84,12 +84,12 @@ def newsfeed_confirm(request, code):
 
 
 def newsfeed_deactivate(request, code):
-	subscriptor = get_object_or_404(Subscriptor, codigo = code)
+	suscriptor = get_object_or_404(Suscriptor, codigo = code)
 
-	if subscriptor.activo == True:
+	if suscriptor.activo == True:
 
-		subscriptor.activo = False
-		subscriptor.save()
+		suscriptor.activo = False
+		suscriptor.save()
 
 		return HttpResponse('Subscripción desactivada.')
 
@@ -107,20 +107,20 @@ def newsfeed_send_code(request):
 
 			try:
 
-				subscriptor   = Subscriptor.objects.get(email = correo)
+				suscriptor   = Suscriptor.objects.get(email = correo)
 				email_subject = "Envío de código para desactivar newsfeed CGV"
 				email_message = """
 					http://localhost:8000/%s/newsfeed-deactivate/
-				""" % subscriptor.codigo
+				""" % suscriptor.codigo
 
 				if __send_email(email_subject, email_message, correo):
 
 					return HttpResponse('Sé ha enviado el código de desactivación a su cuenta de correo electrónico')
 
 
-			except Subscriptor.DoesNotExist:
+			except Suscriptor.DoesNotExist:
 
-				return HttpResponse('El correo electrónico no coincide con ningun subscriptor.')
+				return HttpResponse('El correo electrónico no coincide con ningun suscriptor.')
 
 			# return HttpResponse(correo)
 
