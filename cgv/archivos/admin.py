@@ -6,7 +6,7 @@ class ArchivosInline(admin.TabularInline):
 
 	model           = Archivo
 	extra           = 1
-	fields          = ('link', 'archivo', 'creado')
+	fields          = ('link', 'archivo', 'creado',)
 	readonly_fields = ('link', 'creado',)
 
 

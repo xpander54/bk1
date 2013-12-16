@@ -218,20 +218,27 @@
 								<div class="reflexiones-container" id="reflexiones-audio" style="display: none;">
 									
 									{% for audio in audio %}
+
+
+
+										<a href="/blog/{{ audio.id }}/reflexion/">
 										
 
-										<div class="reflexion-container">							<h3  class="reflexion-title content-strong">
-												
-												{{ audio.titulo }}
+											<div class="reflexion-container">							
+												<h3  class="reflexion-title content-strong">
+													
+													{{ audio.titulo }}
 
-											</h3>
-											<p class="reflexion-brief">
+												</h3>
+												<p class="reflexion-brief">
 
-												{{ audio.abstract }}
-												
-											</p>
+													{{ audio.abstract }}
+													
+												</p>
 
-										</div>
+											</div>
+
+										</a>
 									
 
 									{% endfor %}							
@@ -244,20 +251,26 @@
 								<div class="reflexiones-container" style="display: none;" id="reflexiones-video">
 									
 									{% for video in video %}
+
+
+										<a href="/blog/{{ video.id }}/reflexion/">
 										
 
-										<div class="reflexion-container">							<h3  class="reflexion-title content-strong">
-												
-												{{ video.titulo }}
+											<div class="reflexion-container">							
+												<h3  class="reflexion-title content-strong">
+													
+													{{ video.titulo }}
 
-											</h3>
-											<p class="reflexion-brief">
+												</h3>
+												<p class="reflexion-brief">
 
-												{{ video.abstract }}
-												
-											</p>
+													{{ video.abstract }}
+													
+												</p>
 
-										</div>
+											</div>
+
+										</a>
 									
 
 									{% endfor %}							
@@ -270,21 +283,27 @@
 								<div class="reflexiones-container" style="display: none;" id="reflexiones-ebook" >
 									
 									{% for ebook in ebook %}
+
+
+
+										<a href="/blog/{{ ebook.id }}/reflexion/">
 										
 
-										<div class="reflexion-container">							<h3  class="reflexion-title content-strong">
-												
-												{{ ebook.titulo }}
+											<div class="reflexion-container">							
+												<h3  class="reflexion-title content-strong">
+													
+													{{ ebook.titulo }}
 
-											</h3>
-											<p class="reflexion-brief">
+												</h3>
+												<p class="reflexion-brief">
 
-												{{ ebook.abstract }}
-												
-											</p>
+													{{ ebook.abstract }}
+													
+												</p>
 
-										</div>
-									
+											</div>
+										
+										</a>
 
 									{% endfor %}							
 

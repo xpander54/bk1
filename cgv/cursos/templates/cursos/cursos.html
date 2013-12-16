@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block contenido %}
+
+	<section class="content-main" style="background: #fffefe; min-height: 500px;">
+
+
+		<div class="post-cont">
+
+			<h2 class="content-subtitle">
+				Cursos
+			</h2>
+
+			{% for curso in cursos %}
+
+				<div class="noticia-btn clear-fix">
+
+
+					<div class="noticia-title">
+						{{ curso.titulo }}
+					</div>
+
+					<div class="noticia-brief">
+						{{ curso.abstract | safe}}
+
+					</div>
+
+					<div class="noticia-vermas">
+						<a href="/{{ curso.id }}/cursos/">
+
+							ver más
+						</a>
+					</div>
+
+				</div>
+			{% empty %}
+				<h2>No hay articulos disponibles</h2>
+			{% endfor %} 
+
+			
+		
+		</div>
+
+	</section>
+
+{% endblock %}

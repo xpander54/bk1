@@ -177,27 +177,34 @@
 		</h2>
 
 {# reflexiones #}
-
 		<div class="reflexiones-container" id="container-reflexiones" style="margin: 0;">					
 			{% for reflexion in reflexiones %}
+				
 				<div class="close-btn" id="reflexion-close-btn-{{ reflexion.id }}" data-type="reflexion"  data-nfo="{{ reflexion.id }}" style="display: none;">
 							<img src="{{ STATIC_URL }}img/close.png" alt="cerrar ventana">
 				</div>
 				<div class="reflexion-container" data-type="reflexion" data-nfo="{{ reflexion.id }}" id="reflexion-{{ reflexion.id }}">
-					<h3  class="reflexion-title content-strong">
-						{{ reflexion.titulo }}
-					</h3>
+					<a href="/blog/{{ reflexion.id }}/reflexion/">
+						
+						<h3  class="reflexion-title content-strong">
+							{{ reflexion.titulo }}
+						</h3>
+
+					</a>
 					<p class="reflexion-brief">
-						{{ reflexion.abstract }}	
+						{{ reflexion.abstract | safe }}	
 					</p>
 					<div class="reflexion-contenido" data-nfo="reflexion-{{ reflexion.id }}" style="display: none;">
-						{{ reflexion.contenido|safe }}
+						{{ reflexion.contenido | safe }}
+					</div>
+					<div class="articulo_footer">
+						<a href="/blog/{{ reflexion.id }}/reflexion/">
+							ver más
+						</a>
 					</div>
 				</div>								
 			{% endfor %}
-		</div>
-								
-
+		</div>							
 {# /reflexiones #}
 	
 	{# audio #}
@@ -208,14 +215,25 @@
 							<img src="{{ STATIC_URL }}img/close.png" alt="cerrar ventana">
 				</div>
 				<div class="reflexion-container" data-type="audio" data-nfo="{{ audio.id }}" id="audio-{{ audio.id }}">
-					<h3  class="reflexion-title content-strong">
-						{{ audio.titulo }}
-					</h3>
+
+					<a href="/blog/{{ audio.id }}/reflexion/">
+
+						<h3  class="reflexion-title content-strong">
+							{{ audio.titulo }}
+						</h3>
+					
+					</a>
+
 					<p class="reflexion-brief">
-						{{ audio.abstract }}	
+						{{ audio.abstract | safe }}	
 					</p>
 					<div class="reflexion-contenido" data-nfo="reflexion-{{ audio.id }}" style="display: none;">
 						{{ audio.contenido|safe }}
+					</div>
+					<div class="articulo_footer">
+						<a href="/blog/{{ audio.id }}/reflexion/">
+							ver más
+						</a>
 					</div>
 				</div>								
 			{% endfor %}
@@ -229,21 +247,33 @@
 
 		<div class="reflexiones-container" id="container-video" style="display: none; margin: 0;">					
 			{% for video in video %}
+				
 				<div class="close-btn" data-type="video" id="video-close-btn-{{ video.id }}"  data-nfo="{{ video.id }}" style="display: none;">
 							<img src="{{ STATIC_URL }}img/close.png" alt="cerrar ventana">
 				</div>
 				<div class="reflexion-container" data-type="video" data-nfo="{{ video.id }}" id="video-{{ video.id }}">
-					<h3  class="reflexion-title content-strong">
-						{{ video.titulo }}
-					</h3>
+
+					<a href="/blog/{{ video.id }}/reflexion/">
+
+						<h3  class="reflexion-title content-strong">
+							{{ video.titulo }}
+						</h3>
+
+					</a>
 					<p class="reflexion-brief">
-						{{ video.abstract }}	
+						{{ video.abstract | safe }}	
 					</p>
 					<div class="reflexion-contenido" data-nfo="reflexion-{{ video.id }}" style="display: none;">
 						{{ video.contenido|safe }}
 					</div>
+					<div class="articulo_footer">
+						<a href="/blog/{{ video.id }}/reflexion/">
+							ver más
+						</a>
+					</div>
 				</div>								
-			{% endfor %}
+			
+		{% endfor %}
 		</div>
 
 	{# /video #}
@@ -258,11 +288,15 @@
 							<img src="{{ STATIC_URL }}img/close.png" alt="cerrar ventana">
 				</div>
 				<div class="reflexion-container" data-type="ebook" data-nfo="{{ ebook.id }}" id="ebook-{{ ebook.id }}">
-					<h3  class="reflexion-title content-strong">
-						{{ ebook.titulo }}
-					</h3>
+					<a href="/blog/{{ reflexion.id }}/reflexion/">
+
+						<h3  class="reflexion-title content-strong">
+							{{ ebook.titulo }}
+						</h3>
+
+					</a>
 					<p class="reflexion-brief">
-						{{ ebook.abstract }}	
+						{{ ebook.abstract | safe }}	
 					</p>
 					<div class="reflexion-contenido" data-nfo="reflexion-{{ ebook.id }}" style="display: none;">
 						{{ ebook.contenido|safe }}

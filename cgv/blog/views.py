@@ -1,9 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from newsfeed.forms import EmailNewsfeedForm
 from blog.models import Post
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 
-def reflexion(request):
-	return render(request, 'reflexion.html')
+def reflexion(request, reflexion_id):
+	reflexiones = Post.objects.filter(categoria__nombre = 'reflexiones', estado = 'p')
+	reflexion = get_object_or_404(reflexiones, pk = reflexion_id)
+	context = {
+		'reflexion' : reflexion,
+	}
+	return render(request, 'reflexion.html', context)
 
 def reflexiones(request):
 
