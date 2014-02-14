@@ -13,6 +13,8 @@ class Migration(SchemaMigration):
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('nombre', self.gf('django.db.models.fields.CharField')(max_length=200)),
             ('descripcion', self.gf('django.db.models.fields.TextField')(blank=True)),
+            ('creado', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
+            ('modificado', self.gf('django.db.models.fields.DateTimeField')(auto_now=True, blank=True)),
         ))
         db.send_create_signal(u'newsfeed', ['Feed'])
 
@@ -40,8 +42,10 @@ class Migration(SchemaMigration):
     models = {
         u'newsfeed.feed': {
             'Meta': {'object_name': 'Feed'},
+            'creado': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'descripcion': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'modificado': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'}),
             'nombre': ('django.db.models.fields.CharField', [], {'max_length': '200'})
         },
         u'newsfeed.suscriptor': {

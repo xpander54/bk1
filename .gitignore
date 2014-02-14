@@ -8,3 +8,5 @@ cgv/cgv/settings.py
 .DS_Store
 
 cgv/cgv/media/*
+
+cgv/cgv/wsgi.py
