@@ -144,7 +144,7 @@ def __generate_code(size = 10, chars = string.ascii_uppercase + string.ascii_low
 def __send_email(subject, message, to):
 
 	try:
-		send_mail(subject, message, to, ['netorcido@gmail.com'], fail_silently = False)
+		send_mail(subject, message, to, ['rodrigo@holbox.bz'], fail_silently = False)
 
 		return True
 

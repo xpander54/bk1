@@ -11,9 +11,12 @@
 				<br>
 				<div class="content-nfo" style="font-size: 1.3em; line-height: 1.4em;">
 					<p>
+
 						Quiero darte la bienvenida a nuestra comunidad, formada por gente que esta decidida a tener mejores experiencias cada día de sus vidas; Es para todos, para quienes estan en proceso de crecimiento, para quienes no saben como empezar, para quienes saben a donde van y para los que estan buscando rumbo. 
 
 					</p>
+
+
 					
 					
 
@@ -22,10 +25,6 @@
 					</div>
 				</div>
 				<div class="content-img">
-
-					 
-
-
 
 					<img src="{{ STATIC_URL }}img/foto.jpg">
 
@@ -114,12 +113,12 @@
 							<div class="content-mail-txt-area">
 
 								<!-- <input type="text" name="mail-newsletter"> -->
-
+							
 
 								<form action="{% url 'index' %}" method="post">
 									{% csrf_token %}
 									<p>
-										{{ forma_subscripcion.email }}
+										{{ forma_suscripcion.email }}
 									</p>
 								</form>
 							
@@ -218,20 +217,27 @@
 								<div class="reflexiones-container" id="reflexiones-audio" style="display: none;">
 									
 									{% for audio in audio %}
+
+
+
+										<a href="/blog/{{ audio.id }}/reflexion/">
 										
 
-										<div class="reflexion-container">							<h3  class="reflexion-title content-strong">
-												
-												{{ audio.titulo }}
+											<div class="reflexion-container">							
+												<h3  class="reflexion-title content-strong">
+													
+													{{ audio.titulo }}
 
-											</h3>
-											<p class="reflexion-brief">
+												</h3>
+												<p class="reflexion-brief">
 
-												{{ audio.abstract }}
-												
-											</p>
+													{{ audio.abstract }}
+													
+												</p>
 
-										</div>
+											</div>
+
+										</a>
 									
 
 									{% endfor %}							
@@ -244,20 +250,26 @@
 								<div class="reflexiones-container" style="display: none;" id="reflexiones-video">
 									
 									{% for video in video %}
+
+
+										<a href="/blog/{{ video.id }}/reflexion/">
 										
 
-										<div class="reflexion-container">							<h3  class="reflexion-title content-strong">
-												
-												{{ video.titulo }}
+											<div class="reflexion-container">							
+												<h3  class="reflexion-title content-strong">
+													
+													{{ video.titulo }}
 
-											</h3>
-											<p class="reflexion-brief">
+												</h3>
+												<p class="reflexion-brief">
 
-												{{ video.abstract }}
-												
-											</p>
+													{{ video.abstract }}
+													
+												</p>
 
-										</div>
+											</div>
+
+										</a>
 									
 
 									{% endfor %}							
@@ -270,21 +282,27 @@
 								<div class="reflexiones-container" style="display: none;" id="reflexiones-ebook" >
 									
 									{% for ebook in ebook %}
+
+
+
+										<a href="/blog/{{ ebook.id }}/reflexion/">
 										
 
-										<div class="reflexion-container">							<h3  class="reflexion-title content-strong">
-												
-												{{ ebook.titulo }}
+											<div class="reflexion-container">							
+												<h3  class="reflexion-title content-strong">
+													
+													{{ ebook.titulo }}
 
-											</h3>
-											<p class="reflexion-brief">
+												</h3>
+												<p class="reflexion-brief">
 
-												{{ ebook.abstract }}
-												
-											</p>
+													{{ ebook.abstract }}
+													
+												</p>
 
-										</div>
-									
+											</div>
+										
+										</a>
 
 									{% endfor %}							
 

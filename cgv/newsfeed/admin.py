@@ -30,7 +30,7 @@ class SuscriptorAdmin(admin.ModelAdmin):
 
 			for feed_user in feed_users: #{
 
-				lista_users.append((titulo, feed, 'netorcido@gmail.com', [feed_user.email]))
+				lista_users.append((titulo, feed, 'reflexiones@gabyvaldes.com', [feed_user.email]))
 
 			#}
 
