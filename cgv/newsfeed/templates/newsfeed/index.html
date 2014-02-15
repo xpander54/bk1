@@ -326,7 +326,23 @@
 							<div class="content-subtitle-2">
 								Login:		
 							</div>
-							<div class="content-subtitle-3">
+
+							<div class="content-subtitle-3" style="font-size:1.6em; line-height:1.1em;">
+								<br>
+								Ingresa para ver tus cursos y suscripciones
+								<br>
+								
+								<form method="get" action="http://cursos.gabyvaldes.com/wp-admin">
+
+									<input type="submit" class="submit-btn" value="entrar" action="http://cursos.gabyvaldes.com/wp-login/" name="login-btn" style=" text-align: left; border:0;
+								padding: 0 0 0 1.6em; font-size: .8em; width:80%; background: url({{ STATIC_URL }}img/btn-2.png) no-repeat 0.5em .5em; height: 26px;">
+
+								</form>
+
+							</div>
+							
+
+							<!-- <div class="content-subtitle-3">
 								E-mail:
 								<input type="text" name="mail-username">
 							</div>
@@ -336,7 +352,7 @@
 								<input type="password" name="password">
 								<input type="submit" class="submit-btn" value="entrar" name="login-btn" style=" text-align: left; border:0;
 								padding: 0 0 0 1.6em; font-size: .8em; width:80%; background: url({{ STATIC_URL }}img/btn-2.png) no-repeat 0.5em .5em; height: 26px;">
-							</div>
+							</div> -->
 
 						</div>
 
@@ -409,14 +425,14 @@
 								<div class="content-nfo" style="width: 90%; padding: 1em 0 2.5em 0;">
 
 									<p>
-										{{ testimonio.contenido }}
+										{{ testimonio.contenido | safe }}
 									</p>
 
 
 								</div>
 
 								<div class="testimonio-autor">
-									{{ testimonio.abstract }}
+									{{ testimonio.abstract | safe }}
 								</div>
 
 							</div>
