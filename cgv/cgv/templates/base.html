@@ -7,12 +7,19 @@
 	<link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" /> 	
 
 	<link href="{{ STATIC_URL }}css/estilo.css" rel="stylesheet" type="text/css" />
+	<link href="{{ STATIC_URL }}shadowbox/shadowbox.css" rel="stylesheet" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
 
 
 			
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 	<script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}shadowbox/shadowbox.js"></script>
+	<script type="text/javascript">
+		Shadowbox.init();
+	</script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/shadowbox1.js"></script>
 
 </head>
 
@@ -46,6 +53,11 @@
 						<li>
 							<a href="/">
 								Productos
+							</a>
+						</li>
+						<li>
+							<a href="http://cursos.gabyvaldes.com/testimonio/">
+								Testimonios
 							</a>
 						</li>
 						<li>
