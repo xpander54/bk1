@@ -33,7 +33,7 @@ def index(request):
 			email_message = """
 				Para confirmar su subscripción al neewsfeed visite el siguiente liga:
 
-				http://localhost:8000/%s/newsfeed-confirm/
+				http://gabyvaldes.com/%s/newsfeed-confirm/
 			""" % suscriptor.codigo
 			email_to     = suscriptor.email
 
@@ -110,7 +110,7 @@ def newsfeed_send_code(request):
 				suscriptor   = Suscriptor.objects.get(email = correo)
 				email_subject = "Envío de código para desactivar newsfeed CGV"
 				email_message = """
-					http://localhost:8000/%s/newsfeed-deactivate/
+					http://gabyvaldes.com/%s/newsfeed-deactivate/
 				""" % suscriptor.codigo
 
 				if __send_email(email_subject, email_message, correo):
