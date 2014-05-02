@@ -29,9 +29,9 @@ def index(request):
 			suscriptor.codigo = __generate_code()
 			# PASAR ESTO AL MODELO <
 
-			email_subject = "Confrimación subscripción Neewsfeed CGV"
+			email_subject = "Confrimación de la subscripción Neewsletter Gaby Valdes"
 			email_message = """
-				Para confirmar su subscripción al neewsfeed visite la siguiente liga:
+				Para confirmar su subscripción al neewsletter visite la siguiente liga:
 
 				http://gabyvaldes.com/%s/newsfeed-confirm/
 			""" % suscriptor.codigo
@@ -143,9 +143,11 @@ def __generate_code(size = 10, chars = string.ascii_uppercase + string.ascii_low
 
 def __send_email(subject, message, to):
 
+	
+
 	try:
 		#send_mail(subject, message, to, ['rodrigo@holbox.bz'], fail_silently = False)
-		send_mail(subject, message, to, [suscriptor.email], fail_silently = False)
+		send_mail(subject, message, to, [to], fail_silently = False)
 
 		return True
 
