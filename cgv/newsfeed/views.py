@@ -32,9 +32,12 @@ def index(request):
 			suscriptor.codigo = __generate_code()
 			# PASAR ESTO AL MODELO <
 
-			email_subject = "Confrimación de la subscripción Newsletter Gaby Valdes"
+
+
+			email_subject = "Bienvenido y gracias por tu interes en pertenecer a nuestro newsletter."
 			email_message = """
-				Para confirmar su subscripción al neewsletter visite la siguiente liga:
+				En Gaby Valdes respetamos tu privacidad y tus datos están protegidos.
+				Da click en la liga siguiente y recibe consejos, videos, audios y promociones.
 
 				http://gabyvaldes.com/%s/newsfeed-confirm/
 			""" % suscriptor.codigo
