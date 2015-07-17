@@ -51,7 +51,8 @@ def index(request):
 
 				suscriptor.save()
 
-				return HttpResponseRedirect('/')
+				#return HttpResponseRedirect('/')
+				return HttpResponse('Gracias. Revisa tu correo electrónico y confirma tu suscripción. (no olvides revisar el correo no deseado) <a href="http://www.gabyvaldes.com">regresar</a>')
 				
 			else:
 				return HttpResponse('Errores!!!')
